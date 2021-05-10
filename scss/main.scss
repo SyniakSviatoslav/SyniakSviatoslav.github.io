@@ -1,11 +1,7 @@
 @import "./base/core";
 
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lexend+Deca&family=Train+One&display=swap');
-:root {
-  --main-color: #f7fff7;
-  --background-color: #ff6b6b;
-  --secondary-color: #ffe66d;
-}
+
 
 * {
    font-family: $primaryFont;
@@ -14,134 +10,147 @@
 *::-webkit-scrollbar {
   width: 0.5em;
   height: 0.5em;
-  background-color: $black-theme-light;
+  background-color: $white;
 }
  
 *::-webkit-scrollbar-thumb {
-  background-color: $icon-color;
-  border-radius: 4px;
+  background-color: $red;
+  border-radius: $border_radius;
+}
+
+body, html {
+height: 100vh;
 }
 
 body {
-  margin: 0;
-  font-family: 'Lexend Deca', sans-serif;
-  background-color: var(--background-color);
+margin: 0;
+background-color: $red;
+height: 100vh;
 }
-.main {
-background-color: var(--background-color);
-}
+
 header {
 position:fixed;
-top: 0px;
-font-family: 'Lexend Deca', sans-serif;
-color: var(--background-color);
-font-size: 72px;
-background-color: var(--main-color);
+top: 0;
+z-index: 1;
+font-family: $primaryFont;
+background-color: $white;
 display: flex;
 align-items: center;
 justify-content: space-between;
-width: 100%;
-height: 15%;
+width: 100vw;
+height: 60px;
 }
 .nav {
+width: 100%;
 display: flex;
 justify-content: center;
 align-items: center;
-margin-left: 65%;
-overflow: hidden;
+padding-left: 55%;
 white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
 }
 
 .NavigationItem {
-margin-right: 30px;
-font-family: 'Lexend Deca', sans-serif;
-color: var(--background-color);
-background-color: #f7fff7;
-text-decoration: none;
+margin-right: $margin_header;
+font-family: $primaryFont;
+color: $red;
+background-color: $white;
 border: none;
-padding: 10px;
+padding: $padding_header;
 width: 100%;
-font-size: 20px;
-border-radius: 5px;
+font-size: $l;
+border-radius: $border_radius;
 animation-name: firstanimation;
 animation-duration: 1.5s;
 }
 
 a {
-  color: var(--background-color);
+color: $red;
+text-decoration: none;
 }
 
 a:hover {
-color: var(--main-color);  
+color: $white;  
 }
 
 .NavigationItem:hover {
-color: var(--main-color);
-background-color: var(--background-color);
+color: $white;
+background-color: $red;
 transition-duration: 1.5s;
 width: 100px;
 }
+
 .NavigationItem2 {
+  width: 100%;
   font-family: 'Lexend Deca', sans-serif;
-  color: var(--background-color);
-  background-color: var(--main-color);
-  font-size: 20px;
+  color: $red;
+  background-color: $white;
+  font-size: $l;
   font-weight: bolder;
-  border-radius: 5px;
+  padding: $padding_header;
+  margin-right: $margin_header;
+  border-radius: $border_radius;
   border: none;
   animation-name: firstanimation;
   animation-duration: 1.5s;
   }
+
 .NavigationItem2:hover {
-  font-family: 'Lexend Deca', sans-serif;
-  color: var(--main-color);
-  background-color: var(--background-color);
-  font-size: 20px;
-  border-radius: 5px;
+  font-family: $primaryFont;
+  color: $white;
+  background-color: $red;
+  font-size: $l;
+  border-radius: $border_radius;
   transition-duration: 1.5s;
   }
-a {
-  text-decoration: none;
-}
+
+  .main {
+  height: 100%;
+  width: 100%;
+  padding-top: 60px;
+  display: inline-flex;
+  }
+
+  .content {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .description {
+    padding-right: 10%;
+    padding-left: 10%;
+    padding-top: 5%;
+  }
 
 .logo {
-  display: flex;
-  position: absolute;
-  top: 150px;
-  right: 60px;
+  padding-top: 5%;
   filter: drop-shadow(0px 4px 0px rgba(0, 0, 0, 0.15));
   animation-name: firstanimation;
   animation-duration: 2s;
 }
   
-  
 
-.description {
-  display: flex;
-  justify-content: left;
-  width: 400px;
-}
 h1 {
-  position: absolute;
-  margin-top: 200px;
-  margin-left: 120px;
-  font-family: 'Lexend Deca', sans-serif;
-  font-size: 70px;
-  color: var(--main-color);
+  font-family: $primaryFont;
+  font-size: $xxl;
+  color: $white;
   filter: drop-shadow(6px 6px 0px rgba(0, 0, 0, 0.15));
   animation-name: firstanimation;
   animation-duration: 4s;
   }
   h2 {
-    position: absolute;
-    margin-top: 380px;
-    margin-left: 120px;
-    font-family: 'Lexend Deca', sans-serif;
-    font-size: 40px;
-    color: var(--main-color);
-    animation-name: firstanimation;
-    animation-duration: 4s;
-    }
+  font-family: $primaryFont;
+  font-size: $xl;
+  color: $white;
+  animation-name: firstanimation;
+  animation-duration: 4s;
+  }
     @keyframes firstanimation {
       from 
       {opacity:0;}
@@ -149,13 +158,17 @@ h1 {
         {opacity:1;}
         }
     
-    .icon1 {
-    position: absolute;
-    top: 500px;
-    left:120px;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    animation-name: firstanimation;
-   animation-duration: 4s;
+  .icons {
+    display: flex;
+    align-items: center;
+    padding-top: 50px;
+  }
+
+  .icon1 {
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  animation-name: firstanimation;
+  animation-duration: 4s;
+  margin-right: $margin_icons;
     }
     .icon1:hover {
       display: block;
@@ -164,12 +177,10 @@ h1 {
       transition-duration: 0.5s; 
     }
     .icon2 {
-      position: absolute;
-      top: 500px; 
-      left:200px;
       filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
       animation-name: firstanimation;
       animation-duration: 4s;
+      margin-right: $margin_icons;
       }
       .icon2:hover {
         display: block;
@@ -179,12 +190,10 @@ h1 {
       }
 
       .icon3 {
-        position: absolute;
-        top: 500px; 
-        left:280px;
         filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
         animation-name: firstanimation;
         animation-duration: 4s;
+        margin-right: $margin_icons;
         }
         .icon3:hover {
           display: block;
@@ -192,6 +201,63 @@ h1 {
           border-radius: 5px;
           transition-duration: 0.5s; 
         }
+
+        @media (max-width: 1400px) {
+          .logo {
+              max-width: 90%;
+              max-height: 90%;
+          }
+        }
+
+        @media (max-width: 1277px) {
+          .NavigationItem {
+          font-size: $ms;
+          }
+          .NavigationItem2 {
+            font-size: $ms;
+          }
+          h1 {
+          font-size: $ml;  
+          }
+          h2 {
+          font-size: $mm;  
+          }
+          .logo {
+            max-width: 80%;
+            max-height: 80%;
+        }
+        }
+
+        @media (max-width: 1070px) {
+          .nav {
+            padding-left: 45%;
+          }
+          .logo {
+            max-width: 65%;
+            max-height: 65%;
+        }
+        }
+
+        @media (max-width: 960px) {
+          .NavigationItem {
+          font-size: $xs;
+          }
+          .NavigationItem2 {
+            font-size: $xs;
+          }
+          h1 {
+          font-size: $m;  
+          }
+          h2 {
+          font-size: $s;  
+          }
+        }
+
+        @media (max-width: 770px) {
+          .content {
+          flex-wrap: wrap-reverse;
+          }
+          }
     
 
 
